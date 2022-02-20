@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Tarefas de hoje</string>
+    <string name="add_todo">add_todo</string>
+    <string name="Criartarefa">Criar Tarefa</string>
+    <string name="t_tulo">Título</string>
+    <string name="inp_description">Descrição</string>
+    <string name="ip_data">Data</string>
+    <string name="ip_horas">Hora</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_criar_tarefa">Criar Tarefa</string>
+    <string name="label_editar">Editar</string>
+    <string name="label_deletar">Deletar</string>
+</resources>
