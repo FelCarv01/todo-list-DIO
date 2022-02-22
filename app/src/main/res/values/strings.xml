@@ -11,4 +11,6 @@
     <string name="btn_criar_tarefa">Criar Tarefa</string>
     <string name="label_editar">Editar</string>
     <string name="label_deletar">Deletar</string>
+    <string name="semtarefas">Ops!!\nSem tarefas para hoje.</string>
+    <string name="options">options</string>
 </resources>

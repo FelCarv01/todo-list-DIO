@@ -4,6 +4,7 @@ import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
+import android.view.View
 import com.felcarv.todoslist.databinding.ActivityMainBinding
 import com.felcarv.todoslist.datasource.TaskDataSource
 
@@ -41,7 +42,10 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == CREATE_NEW_TASK && resultCode == Activity.RESULT_OK) updateList()
     }
     private fun updateList(){
-        adapter.submitList(TaskDataSource.getList())
+        val list = TaskDataSource.getList()
+        inflate.emptyStateInclude.emptyState.visibility =  if (list.isEmpty()) View.VISIBLE
+        else View.GONE
+        adapter.submitList(list)
     }
     companion object{
         private const val CREATE_NEW_TASK = 1000

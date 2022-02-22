@@ -15,11 +15,21 @@ class TaskListAdapter : ListAdapter<Task_model, TaskListAdapter.TaskViewHolder>(
     var listenerEdit: (Task_model) -> Unit = { }
     var listenerDelete: (Task_model) -> Unit = { }
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        val inflate = ItemListBinding.inflate(inflater, parent, false)
+        return TaskViewHolder(inflate)
+    }
+
+    override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
+        holder.bind(getItem(position))
+    }
+
     inner class TaskViewHolder(private val inflate: ItemListBinding) :
         RecyclerView.ViewHolder(inflate.root) {
 
         fun bind(item: Task_model) {
-            inflate.tvTitle.text = item.title
+           inflate.tvTitle.text = item.title
             inflate.tvDateHora.text = "${item.date}  ${item.hour}"
             inflate.btnMore.setOnClickListener {
                 showPopup(item)
@@ -45,15 +55,9 @@ class TaskListAdapter : ListAdapter<Task_model, TaskListAdapter.TaskViewHolder>(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val inflate = ItemListBinding.inflate(inflater, parent, false)
-        return TaskViewHolder(inflate)
-    }
 
-    override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
-        holder.bind(getItem(position))
-    }
+
+
 
 }
 

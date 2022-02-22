@@ -30,12 +30,16 @@
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <include
+        android:id="@+id/empty_state_include"
+        layout="@layout/empty_state_view"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_tasks"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
@@ -43,7 +47,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_add_home"
         tools:itemCount="8"
         tools:listitem="@layout/item_list"
-
+        tools:visibility="gone"
         />
 
 
