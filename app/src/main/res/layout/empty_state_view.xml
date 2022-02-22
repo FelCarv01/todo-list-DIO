@@ -28,6 +28,6 @@
         app:srcCompat="@drawable/ic_cat"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        android:contentDescription="@string/cat_nat_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
